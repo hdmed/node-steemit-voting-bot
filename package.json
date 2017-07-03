@@ -1,0 +1,25 @@
+{
+  "name": "steemit-voting-bot",
+  "version": "0.1.0",
+  "description": "https://steemit.com/@jongeun",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jongeunpark/node-steemit-voting-bot.git"
+  },
+  "author": "https://steemit.com/@jongeun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jongeunpark/node-steemit-voting-bot/issues"
+  },
+  "homepage": "https://github.com/jongeunpark/node-steemit-voting-bot#readme",
+  "dependencies": {
+	    "log4js": "^1.1.1",
+	    "steem": "^0.5.18"
+  }
+}
