@@ -45,11 +45,11 @@ $ vi configs/user.json
 
 ### 3. 실행
 ```sh
-$ node voring-bot.js
+$ node voting-bot.js
 ```
 백그라운로 동작시키리면 아래 명령어를 입력하세요.
 ```sh
-$ nohup node voring-bot.js %
+$ nohup node voting-bot.js %
 ```
 
 ### License
