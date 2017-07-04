@@ -19,7 +19,7 @@ var query = {
 		tag: config.tag,
 		limit: 100
 }
-//startBot();
+startBot();
 setInterval(function() {
 	fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
 		  if (err) throw err;
@@ -52,6 +52,8 @@ function startBot(){
 				}
 			}
 			getAccountInfo(availableDiscussions);
+		}else{
+			logger.info('에러 발생: '+err);
 		}
 		
 	});
@@ -85,6 +87,8 @@ function startBot(){
 								generateVortingCandidate(availableDiscussions, userFollowers);
 								
 							}
+						}else{
+							logger.info('에러 발생: '+err);
 						}
 					});
 				}
@@ -103,7 +107,7 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 	vortingCandidateFeeds.sort(function (a, b) { 
 		return a.followerCount < b.followerCount ? -1 : a.followerCount > b.followerCount ? 1 : 0;  
 	});
-	config.lastVotingTimestamp = vortingCandidateFeeds[0].postCreatedAt;
+	config.lastVotingTimestamp = Date.parse(new Date());
 	var str = JSON.stringify(config, null, 4);	
 	
 	
