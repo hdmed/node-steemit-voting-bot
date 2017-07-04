@@ -19,7 +19,7 @@ var query = {
 		tag: config.tag,
 		limit: 100
 }
-startBot();
+
 setInterval(function() {
 	fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
 		  if (err) throw err;
@@ -111,7 +111,7 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 	var str = JSON.stringify(config, null, 4);	
 	
 	
-	logger.info('보팅 후보: '+vortingCandidateFeeds[0].memo);
+	logger.info('보팅 후보: '+vortingCandidateFeeds[0].memo+' 팔로워 수:'+vortingCandidateFeeds[0].followerCount);
 	fs.writeFile(CONFIG_FILEPATH, str, "utf8", function (err) {
 		
     });
