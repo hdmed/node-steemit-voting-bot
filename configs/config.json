@@ -1,8 +1,8 @@
 {
-    "monitoringPeriod": 14400,
+    "monitoringPeriod": 7200,
     "minVotingPower": 50,
     "maxVotingPower": 100,
     "tag": "kr-newbie",
     "introductionLink": "https://steemit.com/kr-newbie/@jongeun/kr-newbie",
-    "lastVotingTimestamp": 1499130958000
+    "lastVotingTimestamp": 1518072792000
 }

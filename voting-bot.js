@@ -19,7 +19,12 @@ var query = {
 		tag: config.tag,
 		limit: 100
 }
-
+fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
+	  if (err) throw err;
+	  config = JSON.parse(data);
+	  query.tag = config.tag
+	  startBot();
+});
 setInterval(function() {
 	fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
 		  if (err) throw err;
@@ -132,7 +137,7 @@ function vote(postInfo){
 		if(!err && voteResult){
 
 			logger.info('보팅 성공: '+postInfo.memo);
-			createComment(postInfo);
+//			createComment(postInfo);
 		}else{
 			logger.info('보팅 실패: '+err);
 		}
