@@ -121,7 +121,7 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 	fs.writeFile(CONFIG_FILEPATH, str, "utf8", function (err) {
 		
     });
-//	vote(vortingCandidateFeeds[0]);
+	vote(vortingCandidateFeeds[0]);
 	
 }
 
