@@ -22,6 +22,7 @@ var query = {
 fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
 	  if (err) throw err;
 	  config = JSON.parse(data);
+	 
 	  query.tag = config.tag
 	  startBot();
 });
@@ -110,7 +111,7 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 		vortingCandidateFeeds.push(availableDiscussions[i]);
 	}
 	vortingCandidateFeeds.sort(function (a, b) { 
-		return a.followerCount < b.followerCount ? -1 : a.followerCount > b.followerCount ? 1 : 0;  
+		return a.followerCount > b.followerCount ? -1 : a.followerCount < b.followerCount ? 1 : 0;  
 	});
 	config.lastVotingTimestamp = Date.parse(new Date());
 	var str = JSON.stringify(config, null, 4);	
@@ -120,7 +121,7 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 	fs.writeFile(CONFIG_FILEPATH, str, "utf8", function (err) {
 		
     });
-	vote(vortingCandidateFeeds[0]);
+//	vote(vortingCandidateFeeds[0]);
 	
 }
 
