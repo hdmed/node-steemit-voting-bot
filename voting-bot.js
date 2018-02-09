@@ -22,7 +22,7 @@ var query = {
 fs.readFile(CONFIG_FILEPATH, 'utf8', function (err, data) {
 	  if (err) throw err;
 	  config = JSON.parse(data);
-	 
+	  
 	  query.tag = config.tag
 	  startBot();
 });
@@ -117,11 +117,11 @@ function generateVortingCandidate(availableDiscussions, userFollowers){
 	var str = JSON.stringify(config, null, 4);	
 	
 	
-	logger.info('보팅 후보: '+vortingCandidateFeeds[0].memo+' 팔로워 수:'+vortingCandidateFeeds[0].followerCount);
+	logger.info('보팅 후보: '+vortingCandidateFeeds[config.rank].memo+' 팔로워 수:'+vortingCandidateFeeds[config.rank].followerCount);
 	fs.writeFile(CONFIG_FILEPATH, str, "utf8", function (err) {
 		
     });
-	vote(vortingCandidateFeeds[0]);
+	vote(vortingCandidateFeeds[config.rank]);
 	
 }
 
